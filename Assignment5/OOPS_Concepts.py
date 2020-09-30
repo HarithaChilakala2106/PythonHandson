@@ -13,7 +13,7 @@ class RestaurantStaff:
 # Chef is a child class which extends RestaurantStaff
 class Chef(RestaurantStaff):
     def __init__(self, name, phone, email, address, salary, cuisine_expertise):
-        super(Chef, self).__init__(name, phone, email, address, salary)
+        super().__init__(name, phone, email, address, salary)
         self.cuisine_expertise = cuisine_expertise
 
     def __str__(self):
@@ -31,7 +31,7 @@ class Chef(RestaurantStaff):
 # RestaurantManager is a child class which extends RestaurantStaff
 class RestaurantManager(RestaurantStaff):
     def __init__(self, name, phone, email, address, salary, employeescnt):
-        super(RestaurantManager, self).__init__(name, phone, email, address, salary)
+        super().__init__(name, phone, email, address, salary)
         self.employeescnt = employeescnt
 
     def __str__(self):
@@ -53,7 +53,7 @@ class RestaurantManager(RestaurantStaff):
 # Server is a child class which extends RestaurantStaff
 class Server(RestaurantStaff):
     def __init__(self, name, phone, email, address, salary, assignedtables):
-        super(Server, self).__init__(name, phone, email, address, salary)
+        super().__init__(name, phone, email, address, salary)
         self.assignedtables = assignedtables
 
     def __str__(self):
@@ -82,9 +82,8 @@ class Customer:
     def __str__(self):
         return f"Customer Name :{self.name} Phone: {self.phone}  Email : {self.email}"
 
-    @staticmethod
-    def send_book_table_request():
-        print("Sent request for table booking")
+    def send_book_table_request(self):
+        print("Sent request for table booking", self.name)
 
     @staticmethod
     def give_order():
@@ -100,7 +99,7 @@ if __name__ == '__main__':
     # print(staff.__str__())
 
     staff.name = "Harika"
-    print(staff.__str__())
+    print(staff)
 
     chef = Chef("Kanth", 123566544, "Kanth@gmail.com", "Munich", 4000, "[panner,roti,salad,juice]")
     print(chef.__str__())
