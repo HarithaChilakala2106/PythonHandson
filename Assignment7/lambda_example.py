@@ -13,7 +13,7 @@ def sort_words(words):
     :param words:
     :return:
     """
-    print(sorted(words, key=lambda x: x[0]))
+    print(sorted(words, key=lambda x: x[1]))
 
 
 def sort_tuples(tupleslist):
